@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>DNS服务器搭建 | 黑色褪去，呼唤君之名</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目录1.DNS是什么 2.DNS查询方式3.DNS服务器类型4.DNS配置的主要文件组5.安装DNS服务软件包6.关于主配置文件7.配置案例  1.DNS是什么DNS( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 www.cctv">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DNS服务器搭建">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/DNS服务器搭建/index.html">
+<meta property="og:site_name" content="黑色褪去，呼唤君之名">
+<meta property="og:description" content="目录1.DNS是什么 2.DNS查询方式3.DNS服务器类型4.DNS配置的主要文件组5.安装DNS服务软件包6.关于主配置文件7.配置案例  1.DNS是什么DNS( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 www.cctv">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-29T01:58:22.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DNS服务器搭建">
+<meta name="twitter:description" content="目录1.DNS是什么 2.DNS查询方式3.DNS服务器类型4.DNS配置的主要文件组5.安装DNS服务软件包6.关于主配置文件7.配置案例  1.DNS是什么DNS( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 www.cctv">
+  
+    <link rel="alternate" href="/atom.xml" title="黑色褪去，呼唤君之名" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1539771691520&amp;di=e0fc0ad09fb5dc783368f8fa3d5a109b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20120916%2F16-015401_11.jpg">
+    <h2 class="author">拜咯</h2>
+    <h3 class="description">小小白</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-DNS服务器搭建" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/15/DNS服务器搭建/" class="article-date">
+  <time class="post-time" datetime="2018-12-15T11:52:21.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">15</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DNS服务器搭建
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+<div class="article-entry" itemprop="articleBody">
+  
+  	
+  	
+  	  <p><strong>目录</strong><br><br><a id="1" href="#1.1">1.DNS是什么 </a><br><br><a id="2" href="#1.2">2.DNS查询方式</a><br><br><a id="3" href="#1.3">3.DNS服务器类型</a><br><br><a id="4" href="#1.4">4.DNS配置的主要文件组</a><br><br><a id="5" href="#1.5">5.安装DNS服务软件包</a><br><br><a id="6" href="#1.6">6.关于主配置文件</a><br><br><a id="7" href="#1.7">7.配置案例</a><br></p>
+<p><table><tr><td bgcolor="#7FFFD4"></td></tr></table></p>
+<p id="1.1"><a href="#1"><li><strong>1.DNS是什么</strong></li></a></p><br><strong>DNS</strong>( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 <a href="http://www.cctv.cn" target="_blank" rel="noopener">www.cctv.cn</a>  <a href="http://www.sohu.com" target="_blank" rel="noopener">www.sohu.com</a> 之类的域名访问网络，实际上是某几个DNS服务器的正向解释功能在发挥作用.<br><p id="1.2"><a href="#2"><li><strong>2.DNS查询方式</strong></li></a></p><br><strong>迭代查询：</strong>客户端向本地 DNS 服务器发出请求后，一直处于等待状态，直到本地名称服务器返回查询结果。以访问 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 为例叙述迭代查询过程。当客户端向本地 DNS 服务器发出请求后，本地 DNS 服务器查询本机缓存，如果有记录，则直接返回；如果没有，则本地 DNS 服务器以客户端的身份将查询请求发给根名称服务器，这个过程是递归查询过程。根名称服务器通过查询返回给本地 DNS 服务器 .com 顶级名称服务器的IP地址；本地DNS服务器收到 .com 顶级名称服务器的IP地址后继续向.com顶级名称服务器发出请求，顶级名称服务器收到请求后查询缓存，如果有记录则直接返回本地DNS服务器，如果没有，则返回baidu.com二级名称服务器的IP地址；本地名称服务器继续发出请求，二级名称服务器同样查找缓存返回<a href="http://www.baidu.com的IP地址。(最多127级域)。" target="_blank" rel="noopener">www.baidu.com的IP地址。(最多127级域)。</a><br><br><strong>递归查询：</strong>客户端和本地DNS服务器的查询就属于递归查询，客户端发出查询请求后处于等待状态，本地DNS以客户端身份询问下一个DNS服务器，直到本地DNS服务器返回确定回复或否定答复。<br>一次完整的查询请求经过的流程： Client –&gt;hosts文件 –&gt;DNS Service Local Cache –&gt; DNS Server (recursion) –&gt; Server Cache –&gt; iteration(迭代) –&gt; 根<br>–&gt; 顶级域名DNS–&gt;二级域名DNS…<br><p id="1.3"><a href="#3"><li><strong>3.DNS服务器类型</strong></li></a></p><br><strong>主名称服务器(primary name server)。</strong>从域管理员构造的本地磁盘文件中加载域信息，该文件（区域文件）包含着该服务器具有管理权的一部分域结构的最精确信息。主服务器是一种权威性服务器，因为它以绝对的权威去回答对其管辖域的任何查询。<br><br><strong>从名称服务器(secondary name server)。</strong>它可从主服务器中复制一整套域信息。区域文件是从主服务器中复制出来的，并作为本地磁盘文件存储在辅助服务器中。这种复制称为”区域文件复制”。在辅助域名服务器中有一个所有域信息的完整拷贝，可以有权威地回答对该域的查询。因此，辅助域名服务器也称作权威性服务器。配置辅助域名服务器不需要生成本地区文件，因为可以从主服务器中下载该区文件。<br><br><strong>唯高速缓存名称服务器(caching-only server)。</strong>可运行域名服务器软件，但是没有域名数据库软件。它从某个远程服务器取得域名服务器查询的结果，一旦取得一个，就将它放在高速缓存中，以后查询相同的信息时就用它予以回答。高速缓存服务器不是权威性服务器，因为它提供的所有信息都是间接信息。当BIND被配置为缓存服务器的时候，它只会回应已缓存的请求，并将所有其他的请求转发到上游的 DNS 服务器。缓存名称服务器只需要.这个zone file文件即可。<br><p id="1.4"><a href="#4"><li><strong>3.DNS配置的主要文件组</strong></li></a></p><br>/etc/hosts　　主机的一个文件列表 　　添加记录如:111.13.100.92   <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br><br>对于简单的主机名解析（点分表示法），默认在请求DNS或NIS网络域名服务器前，/etc/named.conf 通常会告诉程序先查看此文件。<br><br><strong>/etc/resolv.conf</strong>　　转换程序配置文件<br><br>在配置程序请求BIND域名查询服务查询主机名时，必须告诉程序使用哪个域名服务器和IP地址来完成这个任务<br><br><strong>/etc/named.conf</strong>　　BIND主文件<br><br>设置一般的name参数，指向该服务器使用的域数据库的信息源<br><br><strong>/var/named/named.ca</strong>　　根域名配置服务器指向文件<br><br>指向根域名配置服务器，用于告诉缓存服务器初始化<br><br><strong>/var/named/localhost.zone</strong>　   localhost区正向域名解析文件<br><br>用于将本地IP地址（127.0.0.1）转换为本地回送IP地址（127.0.0.1）<br><br><strong>/var/named/name.local</strong>　　localhost区反向域名解析文件<br><br>用于将localhost名字转换为本地回送IP地址（127.0.0.1）<br><br><strong>/etc/named.rfc1912.zones</strong>　　区块设置文件<br><p id="1.5"><a href="#5"><li bgcolor="#7FFFD4"><strong>5.安装DNS服务软件包</strong></li></a></p><br>查询DNS是否已安装：<br>&gt;[root@centos-7 ~]# rpm -qa|grep bind<br><br>&gt;[root@centos-7 ~]# yum list bind<br><br>   用的是root权限  不是root   用sudo命令<br><br><strong>1、在终端命令方式下由rpm命令安装</strong><br><br>DNS服务通常需要安装的RPM软件包如下：<br><br>① bind-9.9.4-61.el7.x86_64.rpm<br><br>该软件包为DNS服务主程序包，服务器必须安装！<br><br>② bind-libs-9.9.4-61.el7.x86_64.rpm<br><br>该软件包提供实现域名解析功能必备的库文件<br><br>③ bind-chroot-9.9.4-61.el7.x86_64.rpm<br><br>该软件包的作用是将运行限制在一个虚拟根目录下，以隐藏运行时的真实目录。<br><br>附：DNS客户端软件：bind-utils-9.9.4-61.el7.x86_64.rpm<br><br>该软件包的提供了对DNS服务器的测试工具，nslookup、dig、host等，是客户端默认安装的工具。<br><br>将上述主要软件包先复制到系统某个目录（例如root）下 ,然后再通过rpm命令安装到系统中。rpm安装命令(参考):<br><br>[root@centos-7 ~]# rpm  -ivh  bind-9.9.4-61.el7.x86_64.rpm<br><br>[root@centos-7 ~]# rpm  -ivh  bind-li*.rpm<br>参数i表示安装，v表示显示安装过程，h表示显示进度。<br><br><strong>2、在终端命令方式下由yum命令安装</strong><br>[root@centos-7 ~]# yum install bind bind-libs bind-chroot -y<br><p id="1.6"><a href="#6"><li bgcolor="#7FFFD4"><strong>6.关于主配置文件</strong></li></a></p>
+
+<p>在修改主配置文件 /etc/named.conf之前，请先作备份：</p>
+<p>[root@centos-7 ~]# cp /etc/named.conf  /etc/named.conf.bak</p>
+<p>[root@centos-7 ~]# cp /etc/named.conf  /etc/named.conf.bak</p>
+<p><em>named.conf文件中options语句所含内容如下：</em></p>
+<p>options {<br>    listen-on port 53 { 127.0.0.1; };    <strong>//监听53端口和主机</strong><br>    listen-on-v6 port 53 { ::1; };<br>    directory     “/var/named”;      <strong>//定义DNS区域数据文件的读写路径</strong><br>    dump-file     “/var/named/data/cache_dump.db”;<strong>//定义服务器存放数据库的路径，当执行rndc dumpdb命令时会用到该选项。</strong><br>        statistics-file “/var/named/data/named_stats.txt”; <strong>//statistics-file选项定义服务器统计信息文件的路径</strong><br>        memstatistics-file “/var/named/data/named_mem_stats.txt”;<strong>//内存统计文件</strong><br>    allow-query     { localhost; };  <strong>//允许可对本DNS进行查询的客户机</strong><br>    recursion yes;   <strong>// yes 是允许递归查询,off不允许</strong></p>
+<pre><code>dnssec-enable yes;        //3条关于DNS安全的设置
+dnssec-validation yes;   //表示在DNS查询的过程中加密,no 不加密
+dnssec-lookaside auto;
+
+/* Path to ISC DLV key */
+bindkeys-file &quot;/etc/named.iscdlv.key&quot;;   //密钥文件
+managed-keys-directory &quot;/var/named/dynamic&quot;;
+</code></pre><p>};<br>在named.conf文件中的设置分成数个语句区段，通常是有一个options（如图8所示）以及多个zone语句区段，named.conf文件的原文仅包含了一个zone语句区段。</p>
+<p><strong>2、关于设置根区域</strong><br>当DNS服务器处理递归查询时，如果本地区域文件不能进行查询的解析，就会转到根DNS服务器查询，所以在主配置文件named.conf文件中还要定义根区域，<br>zone “.” IN {             //用 “.”表示根区域<br>     type hint;          //初始化为高速缓存服务器<br>     file “named.ca”;    //本区域的DNS数据库文件<br>};<br>named.conf文件的原文关于根区域的设置一般不需要修改，这里仅解析其含义。<br>type 可有hint、master、slave和forward等类型，分别表示根区域、主区域、辅助区域和转发区域。<br>type hint就是交给根的意思，说明根区域类型是缓冲服务器。<br>type hint表示根类型区域，常使用一个“hint zone”来指定初始的根名字服务器集合。在服务器启动时，它使用根提示信息来找到一个根名字服务器并从后者获取最近的根名字服务器名单。<br>file：指定区域数据库文件的名称，应在文件名两边使用双引号。<br>zone语句用于定义DNS服务器所服务的区域，其中包括区域名、区域类型和区域文件名等信息。默认配置的DNS服务器没有自定义任何区域，主要靠根提示类型的区域来找到Internet根服务器，并将查询的结果缓存到本地，进而用缓存中的数据来响应其他相同的查询请求，因此采用默认配置的DNS服务器就被称为Caching-only  DNS  Server——只缓存域名服务器。<br><strong>主配置文件语法检查： named-checkconf</strong></p>
+<p id="1.7"><a href="#7"><li><strong>7.配置案例</strong></li></a></p>
+
+
+  	
+  
+</div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/15/DNS服务器搭建/" data-id="cjq8u2yfo000axcvghf4gl4lb" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/29/Hexo+Gibhub搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Hexo+Gibhub搭建博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/17/注入学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">注入学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">黑色褪去，呼唤君之名</h1>
+    <h2 class="blog-subtitle">她的眼睛会笑</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1539771691520&amp;di=e0fc0ad09fb5dc783368f8fa3d5a109b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20120916%2F16-015401_11.jpg">
+    <h2 class="author">拜咯</h2>
+    <h3 class="description">小小白</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/13bailo" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 拜咯<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
