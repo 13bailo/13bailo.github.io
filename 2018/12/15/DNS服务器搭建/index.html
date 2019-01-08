@@ -13,10 +13,18 @@
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
 <meta property="og:description" content="目录1.DNS是什么 2.DNS查询方式3.DNS服务器类型4.DNS配置的主要文件组5.安装DNS服务软件包6.关于主配置文件7.配置案例  1.DNS是什么DNS( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 www.cctv">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-29T01:58:22.381Z">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns1.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns2.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns3.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns4.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns5.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns6.png">
+<meta property="og:image" content="http://107.181.153.71/blog/DNSpng/dns8.png">
+<meta property="og:updated_time" content="2019-01-08T10:46:28.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNS服务器搭建">
 <meta name="twitter:description" content="目录1.DNS是什么 2.DNS查询方式3.DNS服务器类型4.DNS配置的主要文件组5.安装DNS服务软件包6.关于主配置文件7.配置案例  1.DNS是什么DNS( Domain Name System)是“域名系统”的英文缩写，DNS是一种组织域层次结构的计算机和网络服务命名系统，它用于TCP/IP网络，例如Internet，以通过用户友好的名称定位计算机和服务。人们常使用 www.cctv">
+<meta name="twitter:image" content="http://107.181.153.71/blog/DNSpng/dns1.png">
   
     <link rel="alternate" href="/atom.xml" title="黑色褪去，呼唤君之名" type="application/atom+xml">
   
@@ -121,8 +129,24 @@ bindkeys-file &quot;/etc/named.iscdlv.key&quot;;   //密钥文件
 managed-keys-directory &quot;/var/named/dynamic&quot;;
 </code></pre><p>};<br>在named.conf文件中的设置分成数个语句区段，通常是有一个options（如图8所示）以及多个zone语句区段，named.conf文件的原文仅包含了一个zone语句区段。</p>
 <p><strong>2、关于设置根区域</strong><br>当DNS服务器处理递归查询时，如果本地区域文件不能进行查询的解析，就会转到根DNS服务器查询，所以在主配置文件named.conf文件中还要定义根区域，<br>zone “.” IN {             //用 “.”表示根区域<br>     type hint;          //初始化为高速缓存服务器<br>     file “named.ca”;    //本区域的DNS数据库文件<br>};<br>named.conf文件的原文关于根区域的设置一般不需要修改，这里仅解析其含义。<br>type 可有hint、master、slave和forward等类型，分别表示根区域、主区域、辅助区域和转发区域。<br>type hint就是交给根的意思，说明根区域类型是缓冲服务器。<br>type hint表示根类型区域，常使用一个“hint zone”来指定初始的根名字服务器集合。在服务器启动时，它使用根提示信息来找到一个根名字服务器并从后者获取最近的根名字服务器名单。<br>file：指定区域数据库文件的名称，应在文件名两边使用双引号。<br>zone语句用于定义DNS服务器所服务的区域，其中包括区域名、区域类型和区域文件名等信息。默认配置的DNS服务器没有自定义任何区域，主要靠根提示类型的区域来找到Internet根服务器，并将查询的结果缓存到本地，进而用缓存中的数据来响应其他相同的查询请求，因此采用默认配置的DNS服务器就被称为Caching-only  DNS  Server——只缓存域名服务器。<br><strong>主配置文件语法检查： named-checkconf</strong></p>
-<p id="1.7"><a href="#7"><li><strong>7.配置案例</strong></li></a></p>
-
+<p></p><p id="1.7"><a href="#7"><li><strong>7.配置案例</strong></li></a></p><p></p>
+<h3 id="1、安装DNS服务"><a href="#1、安装DNS服务" class="headerlink" title="1、安装DNS服务"></a>1、安装DNS服务</h3><blockquote>
+<p>安装  # yum install bind bind-libs bind-chroot -y</p>
+</blockquote>
+<h3 id="2、配置主配置文件"><a href="#2、配置主配置文件" class="headerlink" title="2、配置主配置文件"></a>2、配置主配置文件</h3><blockquote>
+<p>先备份   # cp /etc/named.conf /etc/named.conf.bak<br>再编辑   # vim /etc/named.conf</p>
+</blockquote>
+<p><img src="http://107.181.153.71/blog/DNSpng/dns1.png" alt=""><br><img src="http://107.181.153.71/blog/DNSpng/dns2.png" alt=""></p>
+<h3 id="3、正反向区域文件"><a href="#3、正反向区域文件" class="headerlink" title="3、正反向区域文件"></a>3、正反向区域文件</h3><p>创建正向解析区域  #<br><img src="http://107.181.153.71/blog/DNSpng/dns3.png" alt=""><br>反向解析区域<br><img src="http://107.181.153.71/blog/DNSpng/dns4.png" alt=""></p>
+<blockquote>
+<p>创建正向区域解析文件并编辑    # vim /var/named/zhang133.com.zone<br><img src="http://107.181.153.71/blog/DNSpng/dns5.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>创建反向区域文件并编辑     #  Vim /var/named/192.168.133.zone<br><img src="http://107.181.153.71/blog/DNSpng/dns6.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>4、在Linux中配置DNS客户端，直接编辑文件/etc/resolv.conf，然后使用nameserver选项来指定DNS服务器的IP地址 。  nameserve  192.168.133.130<br>5、启动DNS  ：  #  systemctl start named<br>设置开机自动加载DNS服务 ：  #     systemctl enable named<br>验证DNS  ： # nslookup<br><img src="http://107.181.153.71/blog/DNSpng/dns8.png" alt=""></p>
+</blockquote>
 
   	
   
