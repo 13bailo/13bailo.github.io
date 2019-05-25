@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -52,10 +52,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.1.1">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -79,7 +79,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -251,9 +251,6 @@
   
 
   
-    
-
-  
 
   
 </nav>
@@ -273,6 +270,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -391,22 +391,19 @@
       
         
           
-            <h3 id="1、手工测试是否存在注入点"><a href="#1、手工测试是否存在注入点" class="headerlink" title="1、手工测试是否存在注入点"></a>1、手工测试是否存在注入点</h3><p>靶场：</p>
-<p>sqli-labs （sql注入学习游戏教程）     下载地址：<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">https://github.com/Audi-1/sqli-labs</a>    </p>
-<p>(注释：# , – )</p>
-<p><code>http://127.0.0.1:8080/?id=1&#39;  （报错）</code></p>
-<p><code>http://127.0.0.1:8080/?id=1 and 1=1 --+ （正常）</code></p>
-<p><code>http://127.0.0.1:8080/?id=1 and 1=2 --+     （报错）</code></p>
-<p>存在注入</p>
-<h3 id="2、猜字段"><a href="#2、猜字段" class="headerlink" title="2、猜字段"></a>2、猜字段</h3><p><code>http://127.0.0.1:8080/?id=1 order by 2   （尝试不同的字段数直到页面在正常和不正常之间）</code></p>
-<h3 id="3、查库名"><a href="#3、查库名" class="headerlink" title="3、查库名"></a>3、查库名</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,database() limit 1,1 --+</code> </p>
-<p>（(union  联合语句） （limit子句可以用于强制select语句返回制定的记录数，limit接受一个或两个数字的参数，如果给定两个参数第一个指定返回记录行的偏移量，第二个指定返回记录行的最大数目。） ）</p>
-<h3 id="4、查表名"><a href="#4、查表名" class="headerlink" title="4、查表名"></a>4、查表名</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,table_name from information_schema.tables where table_schema = &#39;maoshe&#39; limit 1,1--</code> </p>
-<h3 id="5、查字段"><a href="#5、查字段" class="headerlink" title="5、查字段"></a>5、查字段</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,column_name from information_schema.columns where table_schema = &#39;maoshe&#39; and table_name = &#39;admin&#39; limit 1,1 --</code> </p>
-<h3 id="6、查字段内容"><a href="#6、查字段内容" class="headerlink" title="6、查字段内容"></a>6、查字段内容</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,username from admin limit 1,1 --</code> </p>
-<p><code>http://127.0.0.1:8080/?id=1 union select 1,group_concat(id,username,password) from admin limit 1,1 --</code> </p>
-
+            <p>
+              1、手工测
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/17/注入学习/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -559,16 +556,19 @@
       
         
           
-            <p>hexo 在写作的时候，如果在文中添加<code>&lt;!–more–&gt;</code>则该标记之前的部分就会成为该文章的简述，显示在首页里。但自己一直感觉如果可以自行截取会更好，Google 了一下也有人有这样的需求，太没有贴出来具体的方法，在简单的学习了一下 JS 之后贴出自己的解决方案。</p>
-<p>在 hexo 的 github 上看到有人说是跟主题有关，费死八难找到了代码的关键部分：文件<code>/themes/[主题名]/layout/_partial/article.ejs</code>其中有一段为：</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">“article-entry”</span> itemprop=<span class="string">“articleBody”</span>&gt;</span><br><span class="line">  &lt;% <span class="keyword">if</span> (post.excerpt &amp;&amp; index) &#123; %&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">      &lt;p class=<span class="string">“article-more-link”</span>&gt;</span><br><span class="line">        &lt;a href=<span class="string">“&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more”</span>&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">        &lt;%- post.content %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>从代码上看，post.excerpt 就是加了 more 标记之后的文章摘要，如果 post.excerpt 存在且在首页的话，则显示文章的摘要和「Read More」按钮。当不符合上述条件（post.excerpt 存在且在首页），就显示整个文章的内容 post.content。</p><br><p>因为我需要的是在文章里没有 more 标记时自动添加标记，所以需要改动的代码是要放在 else 后面的。我打算在文章没有 more 标记的时候，截取文章的前两段作为摘要，如果文章少于两段，则直接显示整篇文章内容。</p><br><p>所以代码大概是这样：</p><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span></span><br><span class="line"><span class="keyword">var</span> content = post.content</span><br><span class="line"><span class="keyword">while</span>(count &lt; <span class="number">4</span>) &#123;</span><br><span class="line">  content = content.replace(<span class="string">‘\n’</span>,<span class="string">‘x’</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> br = content.indexOf(<span class="string">‘\n’</span>) <span class="comment">// 第一个换行符所在的位置</span></span><br><span class="line"><span class="keyword">if</span> (br == <span class="number">-1</span> || !index) &#123; <span class="comment">// 如果不存在第一个换行符或者不在首页</span></span><br><span class="line">  post.content <span class="comment">// 显示整篇文章</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  post.content.substring(<span class="number">0</span>,br) <span class="comment">// 截取到第二个换行符的位置</span></span><br><span class="line">  <span class="comment">// 显示「Read More」按钮</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><p>根据上述思路，修改后的代码为：</p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">“article-entry”</span> itemprop=<span class="string">“articleBody”</span>&gt;</span><br><span class="line">  &lt;% <span class="keyword">if</span> (post.excerpt &amp;&amp; index) &#123; %&gt;</span><br><span class="line">    &lt;%- post.excerpt %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">      &lt;p class=<span class="string">“article-more-link”</span>&gt;</span><br><span class="line">        &lt;a href=<span class="string">“&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more”</span>&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">      &lt;% var br = post.content.indexOf(<span class="string">‘\n’</span>) %&gt;</span><br><span class="line">      &lt;% <span class="keyword">if</span>(br &lt; 0 || !index) &#123; %&gt;</span><br><span class="line">        &lt;%- post.content %&gt;</span><br><span class="line">      &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">        &lt;%- post.content.substring(0, br) %&gt;</span><br><span class="line">        &lt;% <span class="keyword">if</span> (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">        &lt;p class=<span class="string">“article-more-link”</span>&gt;</span><br><span class="line">          &lt;a href=<span class="string">“&lt;%- config.root %&gt;&lt;%- post.path %&gt;#more”</span>&gt;&lt;%= theme.excerpt_link %&gt;&lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><p>如果需要截取 N 个段落，则可以使用 replace 替换 content 里 N-1 次<code>\n</code>然后使用 indexOf 即可。但是发现如果所要截取的部分有一半处于代码片段的话，就会很惨不忍睹。所以建议使用这种方法自动截取摘要的话，尽量为自己博客有代码的文章手动截取摘要。</p>
-
-
-
-<p>原载：<a href="https://twiceyuan.com/2014/05/25/hexo%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0readmore%E6%A0%87%E8%AE%B0/" target="_blank" rel="noopener">https://twiceyuan.com/2014/05/25/hexo%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0readmore%E6%A0%87%E8%AE%B0/</a></p>
-
+            <p>
+              hexo 
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/17/Hexo 自动添加 Read More 标记/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -731,12 +731,38 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 
@@ -784,6 +810,12 @@
 
 
 
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
 
 
 
@@ -819,7 +851,10 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 
