@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
 <meta property="og:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T09:02:11.065Z">
+<meta property="og:updated_time" content="2019-05-31T09:03:41.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql学习">
 <meta name="twitter:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
@@ -154,12 +154,15 @@
 <p>左连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>右连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#### 联合查询 </span><br><span class="line"></span><br><span class="line">&gt;查询的列数须一致</span><br><span class="line">&gt;表的内容无重复</span><br></pre></td></tr></table></figure></p>
+<p>右连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>select <em> from table_name1 union select </em> from table_name2;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;表的内容有重复</span><br></pre></td></tr></table></figure></p>
-<p>select <em> from table_name1 union all select </em> from table_name2;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 常用函数</span><br></pre></td></tr></table></figure></p>
-<p>GROUP_CONCAT(col) ：返回由属于一组的列值连接组合而成的结果<br>ASCLL(char)  ：返回字符串的ASCLL码值<br>DATABASE() ： 返回当前数据库名<br>USER()或SYSTEM_USER() ： 返回当前登陆用户名<br>VERSION() ： 返回mysql服务器的版本<br>SLEEP(N) ： 休眠秒<br><code>`</code></p>
-
+<h4 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h4><blockquote>
+<p>查询的列数须一致<br>表的内容无重复<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name1 union select * from table_name2;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>表的内容有重复<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name1 union all select * from table_name2;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GROUP_CONCAT(col) ：返回由属于一组的列值连接组合而成的结果</span><br><span class="line">ASCLL(char)  ：返回字符串的ASCLL码值</span><br><span class="line">DATABASE() ： 返回当前数据库名</span><br><span class="line">USER()或SYSTEM_USER() ： 返回当前登陆用户名</span><br><span class="line">VERSION() ： 返回mysql服务器的版本</span><br><span class="line">SLEEP(N) ： 休眠秒</span><br></pre></td></tr></table></figure>
   	
   
 </div>
