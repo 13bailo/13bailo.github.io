@@ -5,18 +5,18 @@
   
   <title>sql学习 | 黑色褪去，呼唤君之名</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
+  <meta name="description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
 <meta name="keywords" content="sql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql学习">
 <meta property="og:url" content="http://weiblog.xyz/2019/05/30/sql学习/index.html">
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
-<meta property="og:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
+<meta property="og:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T12:46:58.630Z">
+<meta property="og:updated_time" content="2019-05-31T09:02:11.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql学习">
-<meta name="twitter:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型12345create table table_name(user varchar(255) not null primAry key)charset=utf8;">
+<meta name="twitter:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
   
     <link rel="alternate" href="/atom.xml" title="黑色褪去，呼唤君之名" type="application/atom+xml">
   
@@ -114,7 +114,10 @@
 <p>选择数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use db_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>创建表 创建user字段和主键和类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(user varchar(255) not null primAry key)charset=utf8;</span><br><span class="line">alter table table_name add password varchar(255);</span><br><span class="line">// 添加字段</span><br><span class="line">alter table table_name drop password varchar(255);</span><br><span class="line">// 删除password字段</span><br></pre></td></tr></table></figure></p>
+<p>创建表 创建user字段和主键和类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(user varchar(255) not null primAry key)charset=utf8;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>添加（删除）字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name add(drop) password varchar(255);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p>删除表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table table_name;</span><br></pre></td></tr></table></figure></p>
@@ -129,22 +132,33 @@
 <p>查数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
-<h3 id="sql语法"><a href="#sql语法" class="headerlink" title="sql语法"></a>sql语法</h3><hr>
-<blockquote>
-<p>SELECT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1，column2 from table_name; // 从表中提取字段1和2</span><br><span class="line">select * from table_name;  // 从表中提取所有字段</span><br></pre></td></tr></table></figure></p>
+<h3 id="基础查询语句"><a href="#基础查询语句" class="headerlink" title="基础查询语句"></a>基础查询语句</h3><blockquote>
+<p>字段查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段1. 字段2， from table_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>SELECT DISTINCT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select distinct column1, column2, ... from table_name;</span><br><span class="line">// 仅返回不同的值  去除相同的</span><br></pre></td></tr></table></figure></p>
+<p>条件查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name where 条件;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>WHERE 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1,column2, ... from table_name where condition;</span><br><span class="line">// 从表中提取字段中满足dondition[条件]的内容</span><br></pre></td></tr></table></figure></p>
+<p>结果排序<br>升序（从小到大） ASC ，降序（从大到小）DESC<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name order by 字段 [ASC(默认)/DESC];</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>AND ，OR ，NOT 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select column1, column2, ... from table_name where condition1 and condition2 and contion3 ...; </span><br><span class="line">// 从表中提取字段中满足dondition1[条件],condition2,contion3的内容</span><br><span class="line">select column1, column2, ... from table_name where condition1 or condition2 or contion3 ...; </span><br><span class="line">// 从表中提取字段中满足dondition1[条件],condition2,contion3中任意一个条件的内容</span><br><span class="line">select column1, column2, ... from table_name where not condition;</span><br><span class="line">//从表中提取字段中不满足dondition1[条件]的内容</span><br></pre></td></tr></table></figure></p>
+<p>结果分页<br>n表示从第几行开始，m表示取机条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from table_name limit n,m ;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h4><blockquote>
+<p>内连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>ORDER BY<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select column1, column2, ... from table_name order by column2</span><br><span class="line">// 从表中提取字段内容对结果按照column2进行排序</span><br></pre></td></tr></table></figure></p>
+<p>外连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<blockquote>
+<p>左连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>右连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">#### 联合查询 </span><br><span class="line"></span><br><span class="line">&gt;查询的列数须一致</span><br><span class="line">&gt;表的内容无重复</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>select <em> from table_name1 union select </em> from table_name2;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;表的内容有重复</span><br></pre></td></tr></table></figure></p>
+<p>select <em> from table_name1 union all select </em> from table_name2;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 常用函数</span><br></pre></td></tr></table></figure></p>
+<p>GROUP_CONCAT(col) ：返回由属于一组的列值连接组合而成的结果<br>ASCLL(char)  ：返回字符串的ASCLL码值<br>DATABASE() ： 返回当前数据库名<br>USER()或SYSTEM_USER() ： 返回当前登陆用户名<br>VERSION() ： 返回mysql服务器的版本<br>SLEEP(N) ： 休眠秒<br><code>`</code></p>
 
   	
   
