@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="黑色褪去，呼唤君之名">
 <meta property="og:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T11:13:07.863Z">
+<meta property="og:updated_time" content="2019-05-31T11:30:25.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql学习">
 <meta name="twitter:description" content="常用mysql命令  创建数据库1create database db_name charset=utf8;   查看数据库1show database;   选择数据库1use db_name;   创建表 创建user字段和主键和类型1create table table_name(user varchar(255) not null primAry key)charset=utf8;   添">
@@ -152,16 +152,17 @@
 <p>结果分页<br>n表示从第几行开始，m表示取机条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from table_name limit n,m ;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h4 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h4><blockquote>
-<p>内连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>内连接<br>内部链接INNER JOIN关键字选择两个表中具有匹配值的记录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table1</span><br><span class="line">INNER JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>外连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>外连接<br>　当左（表1）或右（表2）表记录匹配时，FULL OUTER JOIN关键字将返回所有记录。</p>
+</blockquote>
+<p>　注意： FULL OUTER JOIN可能会返回非常大的结果集！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table1</span><br><span class="line">FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>左连接<br>　SQL左链接LEFT JOIN关键字返回左表（表1）中的所有行，即使在右表（表2）中没有匹配。如果在正确的表中没有匹配，结果是NULL。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)                </span><br><span class="line">FROM table1                </span><br><span class="line">LEFT JOIN table2                </span><br><span class="line">ON table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>左连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>右连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>右连接<br>SQL右链接 RIGHT JOIN 关键字返回右表（table2）的所有行，即使在左表（table1）上没有匹配。如果左表没有匹配，则结果为NULL。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table1</span><br><span class="line">RIGHT JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h4 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h4><blockquote>
 <p>查询的列数须一致<br>表的内容无重复<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name1 union select * from table_name2;</span><br></pre></td></tr></table></figure></p>
@@ -180,7 +181,7 @@
 <p>行子查询（指子查询返回的结果集是一行N列）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1 where (列1,列2) IN (select 列1, 列2 from 表2 where 条件 limit 0,1)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>表子查询（指子查询返回的结果集是N行N列的一个数据表）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>表子查询（指子查询返回的结果集是N行N列的一个数据表）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1 where (列1，列2) in (select 列1，列2 from 表2 where 条件)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
   	
