@@ -845,7 +845,7 @@ body {
   cursor: url("images/icon.png"), default;
 }
 .outer {
-  max-width: 964px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 20px;
   positon: relative;
@@ -1734,8 +1734,6 @@ a.article-title:hover {
   margin: 0 auto;
 }
 .toc-article {
-  background: #eee;
-  border: 1px solid #bbb;
   border-radius: 10px;
   margin: 1.5em 0 0.3em 1.5em;
   padding: 1.2em 1em 0 1em;
@@ -1747,7 +1745,6 @@ a.article-title:hover {
 #toc {
   line-height: 1em;
   font-size: 0.9em;
-  float: right;
 }
 .toc {
   padding: 0;
@@ -1933,16 +1930,16 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  border-left: 5px solid #eb3c3c;
-  background: #272828;
+  border-left: 5px solid #f4dff6;
+  background: rgba(237,242,247,0.96);
   margin: 0 -20px;
-  padding: 15px 20px;
+  padding: 5px 20px;
   overflow: auto;
   color: #ccc;
   line-height: 22.400000000000002px;
 }
 .line {
-  color: #ccc;
+  color: #8973de;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
