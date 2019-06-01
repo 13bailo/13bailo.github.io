@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>信息收集 | 黑色褪去，呼唤君之名</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="信息收集的常用方法 . whois 信息1.域名详细信息 2.域名服务器信息 3.网络IP地址 4.域名创建、过期时间 5.最近更新记录  Whois信息在线收集地址：  站长之家 阿里云域名信息查询Kali whois命令Python-whois模块查询域名信息   企业信息收集1.企业基本信息。  2.员工信息（手机号码、邮箱、姓名等），组织框架、企业法人、企业综合信息等。  3.其中员工信息">
+<meta name="keywords" content="渗透前期">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息收集">
+<meta property="og:url" content="http://weiblog.xyz/2019/06/01/信息收集/index.html">
+<meta property="og:site_name" content="黑色褪去，呼唤君之名">
+<meta property="og:description" content="信息收集的常用方法 . whois 信息1.域名详细信息 2.域名服务器信息 3.网络IP地址 4.域名创建、过期时间 5.最近更新记录  Whois信息在线收集地址：  站长之家 阿里云域名信息查询Kali whois命令Python-whois模块查询域名信息   企业信息收集1.企业基本信息。  2.员工信息（手机号码、邮箱、姓名等），组织框架、企业法人、企业综合信息等。  3.其中员工信息">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-01T08:05:32.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信息收集">
+<meta name="twitter:description" content="信息收集的常用方法 . whois 信息1.域名详细信息 2.域名服务器信息 3.网络IP地址 4.域名创建、过期时间 5.最近更新记录  Whois信息在线收集地址：  站长之家 阿里云域名信息查询Kali whois命令Python-whois模块查询域名信息   企业信息收集1.企业基本信息。  2.员工信息（手机号码、邮箱、姓名等），组织框架、企业法人、企业综合信息等。  3.其中员工信息">
+  
+    <link rel="alternate" href="/atom.xml" title="黑色褪去，呼唤君之名" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1539771691520&amp;di=e0fc0ad09fb5dc783368f8fa3d5a109b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20120916%2F16-015401_11.jpg">
+    <h2 class="author">拜咯</h2>
+    <h3 class="description">小小白</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>2</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-信息收集" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/01/信息收集/" class="article-date">
+  <time class="post-time" datetime="2019-06-01T06:48:53.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      信息收集
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+<div class="article-entry" itemprop="articleBody">
+  
+  	
+  	
+<!-- Table of Contents -->
+
+<div id="toc" class="toc-article">
+<strong class="toc-title">文章目录</strong>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息收集的常用方法"><span class="toc-number">1.</span> <span class="toc-text">信息收集的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#whois-信息"><span class="toc-number">1.1.</span> <span class="toc-text">. whois 信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#企业信息收集"><span class="toc-number">1.2.</span> <span class="toc-text">企业信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Github信息"><span class="toc-number">1.3.</span> <span class="toc-text">Github信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SVN信息"><span class="toc-number">1.4.</span> <span class="toc-text">SVN信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#邮箱信息"><span class="toc-number">1.5.</span> <span class="toc-text">邮箱信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网盘信息收集"><span class="toc-number">1.6.</span> <span class="toc-text">网盘信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞库信息"><span class="toc-number">1.7.</span> <span class="toc-text">漏洞库信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#端口、服务信息"><span class="toc-number">1.8.</span> <span class="toc-text">端口、服务信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子域名枚举"><span class="toc-number">1.9.</span> <span class="toc-text">子域名枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#子域名枚举在线网站-工具："><span class="toc-number">1.9.1.</span> <span class="toc-text">子域名枚举在线网站+工具：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站架构"><span class="toc-number">1.10.</span> <span class="toc-text">网站架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web应用指纹信息"><span class="toc-number">1.11.</span> <span class="toc-text">Web应用指纹信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#敏感文件、目录信息"><span class="toc-number">1.12.</span> <span class="toc-text">敏感文件、目录信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#旁站查询"><span class="toc-number">1.13.</span> <span class="toc-text">旁站查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C段信息"><span class="toc-number">1.14.</span> <span class="toc-text">C段信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-在线接口查询"><span class="toc-number">1.14.1.</span> <span class="toc-text">1.在线接口查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-扫描工具"><span class="toc-number">1.14.2.</span> <span class="toc-text">2.扫描工具</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搜索引擎信息收集"><span class="toc-number">1.15.</span> <span class="toc-text">搜索引擎信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络空间资产搜索引擎信息收集"><span class="toc-number">1.16.</span> <span class="toc-text">网络空间资产搜索引擎信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内网入口点信息"><span class="toc-number">1.17.</span> <span class="toc-text">内网入口点信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Waf信息"><span class="toc-number">1.18.</span> <span class="toc-text">Waf信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#真实IP地址"><span class="toc-number">1.19.</span> <span class="toc-text">真实IP地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#综合收集"><span class="toc-number">1.20.</span> <span class="toc-text">综合收集</span></a></li></ol></li></ol>
+</div>
+
+  	  <h3 id="信息收集的常用方法"><a href="#信息收集的常用方法" class="headerlink" title="信息收集的常用方法"></a>信息收集的常用方法</h3><hr>
+<h4 id="whois-信息"><a href="#whois-信息" class="headerlink" title=". whois 信息"></a>. whois 信息</h4><pre><code>1.域名详细信息
+2.域名服务器信息
+3.网络IP地址
+4.域名创建、过期时间
+5.最近更新记录
+</code></pre><blockquote>
+<p>Whois信息在线收集地址：</p>
+</blockquote>
+<p><a href="http://whois.chinaz.com" target="_blank" rel="noopener">站长之家</a><br><a href="https://whois.aliyun.com" target="_blank" rel="noopener"> 阿里云域名信息查询</a><br>Kali whois命令<br>Python-whois模块查询域名信息  </p>
+<h4 id="企业信息收集"><a href="#企业信息收集" class="headerlink" title="企业信息收集"></a>企业信息收集</h4><pre><code>1.企业基本信息。
+
+2.员工信息（手机号码、邮箱、姓名等），组织框架、企业法人、企业综合信息等。
+
+3.其中员工信息收集是信息收集中的一项重要工作，员工信息包括：员工姓名、员工工号、员工家庭及交际信息、上网习惯等。（社会工程学）
+
+4.员工身份信息：员工简历，员工身份证，手机号，生日，家乡，住址等个人信息。5、员工社交账号信息：QQ号，QQ群，微博，微信，支付宝，员工邮箱账号等。
+</code></pre><blockquote>
+<p>企业信息查询网站：</p>
+</blockquote>
+<p><a href="https://www.tianyancha.com" target="_blank" rel="noopener">天眼查</a><br><a href="https://www.qichacha.com/" target="_blank" rel="noopener">企业查</a><br><a href="http://www.miitbeian.gov.cn/icp/publish/query/icpMemoInfo_showPage.action#ICP" target="_blank" rel="noopener">备案查询</a><br><a href="http://www.beian.gov.cn/portal/recordQuery" target="_blank" rel="noopener">公安部备案查询</a></p>
+<h4 id="Github信息"><a href="#Github信息" class="headerlink" title="Github信息"></a>Github信息</h4><pre><code>1.泄露源码
+2.泄露数据库、邮箱、ftp、ssh、3389等账号
+3.泄露的人员信息
+4.泄露其他敏感信息
+</code></pre><h4 id="SVN信息"><a href="#SVN信息" class="headerlink" title="SVN信息"></a>SVN信息</h4><p>SVN（subversion）是源代码版本管理软件，造成SVN源代码漏洞的主要原因是管理员操作不规范。“在使用SVN管理本地代码过程中，会自动生成一个名为.svn的隐藏文件夹，其中包含重要的源代码信息。但一些网站管理员在发布代码时，不愿意使用‘导出’功能，而是直接复制代码文件夹到WEB服务器上，这就使.svn隐藏文件夹被暴露于外网环境，黑客可以借助其中包含的用于版本信息追踪的entries文件，逐步摸清站点结构。”（可以利用.svn/entries文件，获取到服务器源码、svn服务器账号密码等信息）。</p>
+<h4 id="邮箱信息"><a href="#邮箱信息" class="headerlink" title="邮箱信息"></a>邮箱信息</h4><p>常见的在线邮箱收集网站，这些网站通过爬虫，搜索引擎等方式，获取互联网上暴露的邮箱地址。</p>
+<pre><code>http://www.skymem.info/
+https://hunter.io/
+https://email-format.com/
+</code></pre><h4 id="网盘信息收集"><a href="#网盘信息收集" class="headerlink" title="网盘信息收集"></a>网盘信息收集</h4><pre><code>http://magnet.chongbuluo.com/
+http://www.panduoduo.net/
+http://www.zhuzhupan.com/
+https://www.quzhuanpan.com/
+https://www.panc.cc
+</code></pre><h4 id="漏洞库信息"><a href="#漏洞库信息" class="headerlink" title="漏洞库信息"></a>漏洞库信息</h4><p>查询历史漏洞，获取目标之前存在的安全问题，可以利用已知漏洞直接对目标系统进行攻击。</p>
+<pre><code>http://www.anquan.us/
+</code></pre><h4 id="端口、服务信息"><a href="#端口、服务信息" class="headerlink" title="端口、服务信息"></a>端口、服务信息</h4><p>(1) Nmap （2）御剑高速TCP全端口扫描工具 （3） ScanPort （4）Google浏览器Shodan插件 （5）<a href="http://old.tool.chinaz.com/port/" target="_blank" rel="noopener">站长之家</a> （6）<a href="http://coolaf.com/tool/port" target="_blank" rel="noopener">在线端口检测</a></p>
+<h4 id="子域名枚举"><a href="#子域名枚举" class="headerlink" title="子域名枚举"></a>子域名枚举</h4><pre><code>1.子域名探测可以帮我们发现渗透测试中更多的服务，它们在安全评估的范围内，从而增加了发现漏洞的机会。
+
+2.查找一些用户上较少，被人遗忘的子域名，其上运行的应用程序可能会使我们发现关键漏洞。
+
+3.通常，同一组织的不同域名/应用程序中存在相同的漏洞。
+</code></pre><h5 id="子域名枚举在线网站-工具："><a href="#子域名枚举在线网站-工具：" class="headerlink" title="子域名枚举在线网站+工具："></a>子域名枚举在线网站+工具：<br></h5><blockquote>
+<p>（1）搜索引擎查询</p>
+</blockquote>
+<pre><code>Google、baidu、Bing等传统搜索引擎
+site:baidu.com inurl:baidu.com
+搜target.com|公司名字
+</code></pre><blockquote>
+<p>（2）子域名搜集小工具</p>
+</blockquote>
+<p><a href="https://github.com/lijiejie/subDomainsBrute" target="_blank" rel="noopener">subDomainsBrute</a><br><br><a href="https://github.com/ring04h/wydomain" target="_blank" rel="noopener">wydomain</a><br><br><a href="https://github.com/EnableSecurity/wafw00f" target="_blank" rel="noopener">wafw00f</a><br><br><a href="https://github.com/urbanadventurer/whatweb" target="_blank" rel="noopener">WhatWeb</a><br><br><a href="https://github.com/urbanadventurer/whatweb" target="_blank" rel="noopener">dirsearch</a><br><br>layer子域名挖掘机<br><br>DNSdumpster<br><br><a href="https://github.com/aboul3la/Sublist3r" target="_blank" rel="noopener">Sublist3r</a></p>
+<blockquote>
+<p>（3）在线查询工具</p>
+</blockquote>
+<pre><code>http://tool.chinaz.com/subdomain/
+https://www.virustotal.com/
+https://censys.io/
+https://x.threatbook.cn/
+https://phpinfo.me/domain/
+</code></pre><blockquote>
+<p>（4）网络空间资产搜索引擎</p>
+</blockquote>
+<pre><code>Zoomeye
+Shodan
+Fofa
+</code></pre><blockquote>
+<p>(5) DNS查询/枚举<br>在线查询网站：</p>
+</blockquote>
+<pre><code>http://tool.chinaz.com/dns/
+
+https://tool.lu/dns/
+</code></pre><blockquote>
+<p>DNS暴力破解：fierce</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/xuanhun/p/3489038.html#RefHeading22036_2040717175" target="_blank" rel="noopener">DNS信息收集</a><br><br><a href="http://www.0xby.com/1105.html" target="_blank" rel="noopener">渗透测试之子域名探测指南</a><br><br><a href="https://blog.csdn.net/c465869935/article/details/53444117" target="_blank" rel="noopener">域传送漏洞</a></p>
+<blockquote>
+<p>(6) 证书透明度公开日志枚举</p>
+</blockquote>
+<pre><code>证书颁发机构(CA)必须将他们发布的每个SSL/TLS证书发布到公共日志中。SSL/TLS证书通常包含域名、子域名和电子邮件地址。因此SSL/TLS证书成为了攻击者的切入点。
+</code></pre><blockquote>
+<p>SSL证书搜索引擎：</p>
+</blockquote>
+<pre><code>https://certdb.com/domain/github.com
+https://crt.sh/?Identity=%%.github.com
+https://censys.io/
+</code></pre><h4 id="网站架构"><a href="#网站架构" class="headerlink" title="网站架构"></a>网站架构</h4><pre><code>1.操作系统类型
+2.数据库类型
+3.Web中间件
+4.网站开发语言
+</code></pre><h4 id="Web应用指纹信息"><a href="#Web应用指纹信息" class="headerlink" title="Web应用指纹信息"></a>Web应用指纹信息</h4><pre><code>1.Web前端框架
+2.Web应用框架
+3.Web开发框架
+4.CMS类型
+5.指定路径下指定名称的js文件或代码
+6.指定路径下指定名称的css文件或代码
+7.display:none中的版权信息
+8.页面底部版权信息，关键字© Powered by等
+9.注释掉的html代码中的内容
+10.http头中X-Powered-By中的值，有的应用程序框架会在此值输出
+11.cookie中的关键字
+12.robots.txt文件中的关键字
+13.404报错页面
+14.302返回时的旗标
+</code></pre><blockquote>
+<p>Web应用指纹信息：</p>
+</blockquote>
+<p>1.<a href="http://finger.tidesec.net" target="_blank" rel="noopener">潮汐指纹</a><br><br>2.wappalyzer插件<br><br>3.whatweb工具<br><br>4.<a href="http://whatweb.bugscaner.com/look" target="_blank" rel="noopener">CMS识别工具</a><br><br>5.<a href="http://www.yunsee.cn" target="_blank" rel="noopener">云悉</a></p>
+<h4 id="敏感文件、目录信息"><a href="#敏感文件、目录信息" class="headerlink" title="敏感文件、目录信息"></a>敏感文件、目录信息</h4><pre><code>1.robots.txt
+2.crossdomin.xml
+3.sitemap.xml
+4.后台目录
+5.网站安装包
+6.网站上传目录
+7.mysql管理页面
+8.phpinfo
+9.网站文本编辑器
+10.测试文件
+11.网站备份文件(.rar、zip、.7z、.tar.gz、.bak)
+12.DS_Store 文件
+13.vim编辑器备份文件(.swp)
+14.WEB—INF/web.xml文件
+</code></pre><h4 id="旁站查询"><a href="#旁站查询" class="headerlink" title="旁站查询"></a>旁站查询</h4><p>旁站信息：旁站是和目标网站在同一台服务器上的其它的网站，主站无法获取权限的情况下，旁站便可以作为攻击入口。</p>
+<blockquote>
+<p>旁站信息收集：</p>
+</blockquote>
+<pre><code>http://s.tool.chinaz.com/same
+
+https://phpinfo.me/bing.php
+
+https://www.aizhan.com/ IP反查域名
+
+http://www.webscan.cc
+</code></pre><h4 id="C段信息"><a href="#C段信息" class="headerlink" title="C段信息"></a>C段信息</h4><p>C段信息：C段是和目标服务器ip处在同一个C段的其它服务器。</p>
+<h5 id="1-在线接口查询"><a href="#1-在线接口查询" class="headerlink" title="1.在线接口查询"></a>1.在线接口查询</h5><pre><code>http://www.webscan.cc
+
+https://phpinfo.me/bing.php
+
+https://www.chinabaiker.com/cduan.php
+</code></pre><h5 id="2-扫描工具"><a href="#2-扫描工具" class="headerlink" title="2.扫描工具"></a>2.扫描工具</h5><p>Nmap扫描C段：</p>
+<h4 id="搜索引擎信息收集"><a href="#搜索引擎信息收集" class="headerlink" title="搜索引擎信息收集"></a>搜索引擎信息收集</h4><pre><code>1.搜索子域名
+
+2.搜索后台管理页面
+
+3.搜索泄露的敏感信息
+
+4.搜索未授权访问
+
+5.搜索开放端口服务
+
+6.搜索过往或未修复漏洞
+
+7.搜索目标相关人员信息
+</code></pre><blockquote>
+<p>常见后缀名:</p>
+</blockquote>
+<pre><code>&quot;.vscode&quot; &quot;.env&quot; &quot;.Trash&quot; &quot;.bashrc&quot; &quot;.git&quot; &quot;.ftpconfig&quot; &quot;.ds_store&quot; &quot;.ssh&quot; &quot;.mysql_history&quot; &quot;WS_FTP.ini&quot; &quot;admin.zip&quot; &quot;dead.letter&quot; &quot;secring.skr&quot; &quot;secring.pgp&quot; &quot;secring.bak&quot; &quot;.bash_history&quot; &quot;README.md&quot; &quot;README.MD&quot; &quot;README&quot; &quot;phpinfo.php&quot; &quot;test.php&quot; &quot;database.propertie&quot; &quot;web.xml&quot; &quot;.gitignore&quot; &quot;_viminfo&quot; &quot;.bak_Edietplus&quot; &quot;.viminfo&quot; &quot;.swp&quot; &quot;.swo&quot; &quot;.swn&quot; &quot;.swm&quot; &quot;.swl&quot; &quot;.save1&quot; &quot;.save2&quot; &quot;.save3&quot; &quot;.svn&quot; &quot;.hg&quot; &quot;.bzr&quot; &quot;.xml&quot; &quot;.yml&quot; &quot;.mail&quot; &quot;.password&quot; &quot;.letter&quot; &quot;.bak&quot; &quot;.back&quot; &quot;.pwd&quot; &quot;.config&quot; &quot;.conf&quot; &quot;.cgi&quot; &quot;.mdb&quot; &quot;.db&quot; &quot;.json&quot; &quot;.ini&quot; &quot;.reg&quot; &quot;.txt&quot; &quot;.zip&quot; &quot;.rar&quot; &quot;.tar.gz&quot; &quot;.7z&quot; &quot;.cab&quot; &quot;.jar&quot; &quot;.lzh&quot; &quot;.ace&quot; &quot;.gzip&quot; &quot;.uue&quot; &quot;.bz2&quot; &quot;.arj&quot; &quot;.iso&quot; &quot;.z&quot; &quot;~&quot; &quot;.idle&quot; &quot;.inc&quot; &quot;.yaml&quot; &quot;.cfg&quot; &quot;.dump&quot; &quot;.sql&quot; &quot;.doc&quot; &quot;.xls&quot; &quot;.pptx&quot; &quot;.docx&quot; &quot;.ppt&quot; &quot;.ssh&quot; &quot;.mdb&quot; &quot;.cfg&quot; &quot;.gov&quot; &quot;.sh&quot; &quot;.desk&quot; &quot;.cnf&quot; &quot;.pl &quot;.dll&quot; &quot;.nsf&quot; &quot;.cfm&quot; &quot;.ctl&quot;
+</code></pre><h4 id="网络空间资产搜索引擎信息收集"><a href="#网络空间资产搜索引擎信息收集" class="headerlink" title="网络空间资产搜索引擎信息收集"></a>网络空间资产搜索引擎信息收集</h4><p>网络空间搜索引擎的作用就是将互联网上公开的网络资产收集和整理，以此方便人们进行查阅和利用。网络空间可以发现了不少企业的脆弱系统，未授权访问、SQL注入、弱口令等等都是存在的。</p>
+<p><a href="https://www.shodan.io/" target="_blank" rel="noopener">Shodan</a><br><br><a href="https://fofa.so/" target="_blank" rel="noopener">FOFA</a><br><br><a href="https://www.zoomeye.org/" target="_blank" rel="noopener">Zoomeye</a><br><br><a href="https://www.oshadan.com/" target="_blank" rel="noopener">oshadan</a></p>
+<h4 id="内网入口点信息"><a href="#内网入口点信息" class="headerlink" title="内网入口点信息"></a>内网入口点信息</h4><pre><code>1.企业邮箱登陆口
+
+2.VPN登陆口
+
+3.各类OA/crm/sso系统的web入口
+
+4.各类中间件web页面管理入口
+
+5.各类监控系统、防火墙、虚拟化、路由器入口等
+</code></pre><h4 id="Waf信息"><a href="#Waf信息" class="headerlink" title="Waf信息"></a>Waf信息</h4><pre><code>1.wafw00f工具
+
+2.Nmap
+
+Nmap探测WAF有两种脚本，一种是http-waf-detect，一种是http-waf-fingerprint。
+
+3.Burpsuite：X-Powered-By字段
+</code></pre><h4 id="真实IP地址"><a href="#真实IP地址" class="headerlink" title="真实IP地址"></a>真实IP地址</h4><pre><code>CND介绍
+CDN的全称是Content Delivery Network（内容分发网络），通过在网络各处的加速节点服务器来为网站抵挡恶意流量，把正常流量进行转发。用简单点的话来说，CDN一般有三个作用：
+1.跨运营商加速：我们自己的网站常常只属于一个运营商(比如：电信)，而加速节点遍布每家运营商，于是和网站不同运营商（比如：联通）的用户访问起来就不会那么慢了。
+2.缓存加速：很多的静态资源以及一部分页面更新都是比较慢的（比如首页），这个时候CDN就会根据浏览器的max-age和last-modified值以及管理员的预设值来进行缓存，于是很多流量CDN节点就不会每次都来向网站请求，CDN节点可以直接自作主张地将命中的缓存内容返回。
+3.恶意流量过滤：这是CDN非常重要的一个作用，也是很多网站会用CDN的原因，因为CDN能为我们抵挡攻击大流量攻击、普通的攻击（比如注入等），只有正常流量才会转发给网站。
+</code></pre><blockquote>
+<p><a href="https://www.cnblogs.com/qiudabai/p/9763739.html" target="_blank" rel="noopener">11种绕过CDN查找真实IP方法</a><br>验证是否存在CDN</p>
+</blockquote>
+<p>（1）使用各种多地 ping 的服务，查看对应IP地址是否唯一，如果不唯一多半是使用了CDN，多地 Ping 网站有:</p>
+<pre><code>http://ping.chinaz.com/
+
+http://ping.aizhan.com/
+</code></pre><p>（2）修改本地hosts文件，强行将域名与IP解析对应，然后访问域名查看页面是否变化。</p>
+<blockquote>
+<p>绕过CDN查找网站真实IP</p>
+</blockquote>
+<blockquote>
+<p>（1）查看IP与域名绑定的历史记录，可能会存在使用CDN前的记录。</p>
+</blockquote>
+<p><a href="https://dnsdb.io/zh-cn/" target="_blank" rel="noopener">DNS查询</a><br><br><a href="https://x.threatbook.cn/" target="_blank" rel="noopener">微步在线</a><br><br><a href="http://toolbar.netcraft.com/site_report?url=" target="_blank" rel="noopener">在线域名信息查询</a><br><br><a href="http://viewdns.info/" target="_blank" rel="noopener">DNS、IP等查询</a><br><br><a href="https://tools.ipip.net/cdn.php" target="_blank" rel="noopener">CDN查询IP</a></p>
+<blockquote>
+<p>（2）<a href="https://securitytrails.com" target="_blank" rel="noopener">SecurityTrails平台</a></p>
+</blockquote>
+<p>在搜索字段中输入网站域名，然后按Enter键即可，这时“历史数据”就可以在左侧的菜单中找到真实原始IP 。</p>
+<blockquote>
+<p>（3）查询子域名</p>
+</blockquote>
+<p>CDN是不便宜的，所以很多站长可能只会对主站或者流量大的子站点做了CDN，而很多小站子站点又跟主站在同一台服务器或者同一个C段内，此时就可以通过查询子域名对应的IP来辅助查找网站的真实IP，收集方法同子域名收集。<br>Subdomainbrute为例，仅需打开cmd进入它所在的目录输入Python subdomainbrute.py baidu.com –full即可收集百度的子域名，收集子域名后尝试以解析ip不在cdn上的ip解析主站，直到真实ip成功被获取到。</p>
+<blockquote>
+<p>（4）网络空间搜索引擎</p>
+</blockquote>
+<p>常见的有以前的钟馗之眼，shodan，fofa搜索。以fofa为例，只需输入:title:“网站的title关键字”或者body: “网站的body特征”就可以找出fofa收录的有这些关键字的ip域名，很多时候能获取网站的真实ip。</p>
+<blockquote>
+<p>（5）利用SSL证书寻找真实原始IP</p>
+</blockquote>
+<p>假如在<a href="http://www.wangsu.com上托管了一个服务,原始服务器IP是136.23.63.44,而wangsu会为你提供DDoS保护，Web应用程序防火墙等服务，以保护你的服务免受攻击。为此，你的Web服务器就必须支持SSL并具有证书。" target="_blank" rel="noopener">www.wangsu.com上托管了一个服务,原始服务器IP是136.23.63.44,而wangsu会为你提供DDoS保护，Web应用程序防火墙等服务，以保护你的服务免受攻击。为此，你的Web服务器就必须支持SSL并具有证书。</a></p>
+<p>当在端口443（<a href="https://136.23.63.44:443）上直接连接到IP时，SSL证书就会被暴露。如果攻击者扫描0.0.0.0/0，即整个互联网，他们就可以在端口443上获取在wangsu上的有效证书，进而获取提供给你的Web服务器IP。" target="_blank" rel="noopener">https://136.23.63.44:443）上直接连接到IP时，SSL证书就会被暴露。如果攻击者扫描0.0.0.0/0，即整个互联网，他们就可以在端口443上获取在wangsu上的有效证书，进而获取提供给你的Web服务器IP。</a></p>
+<p>目前Censys工具就能实现对整个互联网的扫描，Censys是一款用以搜索联网设备信息的新型搜索引擎，能够扫描整个互联网，Censys每天都会扫描IPv4地址空间，以搜索所有联网设备并收集相关的信息，并返回一份有关资源（如设备、网站和证书）配置和部署信息的总体报告。</p>
+<blockquote>
+<p>（6）使用国外主机解析域名</p>
+</blockquote>
+<p>国内很多 CDN 厂商因为各种原因只做了国内的线路，而针对国外的线路可能几乎没有，此时我们使用国外的主机直接访问可能就能获取到真实IP。</p>
+<blockquote>
+<p>（7）网站漏洞查找</p>
+</blockquote>
+<p>目标敏感文件泄露，例如：phpinfo之类的探针、GitHub信息泄露等。</p>
+<p>XSS盲打，命令执行反弹shell，SSRF等。</p>
+<p>无论是用社工还是其他手段，拿到目标网站管理员在CDN的账号，从而在从CDN的配置中找到网站的真实IP。</p>
+<blockquote>
+<p>（8）网站邮件订阅查找</p>
+</blockquote>
+<p>RSS邮件订阅，很多网站都自带sendmail，会发邮件给我们，此时查看邮件源码里面就会包含服务器的真实 IP 了。</p>
+<blockquote>
+<p>（9）nmap扫全网</p>
+</blockquote>
+<p>首先从apnic获取IP段，然后使用Zmap的banner-grab扫描出来80端口开放的主机进行banner抓取，最后在http-req中的Host写需要寻找真实IP的域名。</p>
+<h4 id="综合收集"><a href="#综合收集" class="headerlink" title="综合收集"></a>综合收集</h4><p><a href="https://www.freebuf.com/sectool/104949.html" target="_blank" rel="noopener">Maltego互联网情报收集</a><br><br><a href="https://www.freebuf.com/articles/web/7385.html" target="_blank" rel="noopener">Recon-NG 信息侦察收集工具</a><br><br>Kali/Parrot中的其他信息收集工具</p>
+
+  	
+  
+</div>
+    <footer class="article-footer">
+      <a data-url="http://weiblog.xyz/2019/06/01/信息收集/" data-id="cjwd7nfen0003mcv39gdq8gwz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/渗透前期/">渗透前期</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/30/sql学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">sql学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">黑色褪去，呼唤君之名</h1>
+    <h2 class="blog-subtitle">她的眼睛会笑</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1539771691520&amp;di=e0fc0ad09fb5dc783368f8fa3d5a109b&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20120916%2F16-015401_11.jpg">
+    <h2 class="author">拜咯</h2>
+    <h3 class="description">小小白</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>2</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/13bailo" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 拜咯<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
